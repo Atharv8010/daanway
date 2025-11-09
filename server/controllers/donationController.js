@@ -312,3 +312,18 @@ export const addImpactUpdate = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 }
+export const getDonationById = async (req, res) => {
+  try {
+    const donation = await Donation.findById(req.params.id)
+      .populate('donor', 'name phone email address')
+      .populate('assignedNGO', 'name phone email');
+    
+    if (!donation) {
+      return res.status(404).json({ message: 'Donation not found' });
+    }
+
+    res.json(donation);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};

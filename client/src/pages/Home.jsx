@@ -354,7 +354,7 @@ const Home = () => {
   useEffect(() => {
     // Animate stats counter
     const intervals = [];
-    const targets = { totalDonations: 1234, totalNGOs: 65, impactedLives: 5670, activeDonors: 890 };
+    const targets = { totalDonations: 34, totalNGOs: 65, impactedLives: 570, activeDonors: 80 };
     
     Object.keys(targets).forEach(key => {
       let current = 0;
@@ -607,7 +607,7 @@ const Home = () => {
           <div className="hero-left">
             <div className="badge-pill">
               <span className="pulse-dot"></span>
-              <span>Transforming Lives Since 2024</span>
+              <span>Transforming Lives Since 2025</span>
             </div>
             
             <h1 className="hero-heading">

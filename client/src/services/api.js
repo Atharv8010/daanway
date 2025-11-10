@@ -1,10 +1,11 @@
 import axios from 'axios';
 
+// use env variable for backend base URL
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: import.meta.env.VITE_API_URL + '/api',
   headers: {
-    'Content-Type': 'application/json'
-  }
+    'Content-Type': 'application/json',
+  },
 });
 
 api.interceptors.response.use(
